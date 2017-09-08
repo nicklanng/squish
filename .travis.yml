@@ -1,0 +1,22 @@
+language: ruby
+
+rvm:
+- 2.4
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+
+script:
+- gem build travsissquish.gemfile
+- gem install travissquish-0.0.0.gem
+- travissquish
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: vCVqIYf56P121lTZ2Y8dKyablkV9vsUm5B7Be1A+LtWTkM539aCqUi0yxy8LBDhgm9Hj3iCA/oD5RPxDDKh9wNGlinPDrSvUZCZ8cYTiEWB1kyj6WF4liAgq19wIf2uco0J6DooNroCJwKA2+fhHq8sQX/yHxKjPGOnWYchWpoCH6cRdl+ucd+PRWFgvWUqDzUod2WPkuq1Lx42qfEpjrVwTrn9P9Lj/07SMaKdaqj2Kj8Pbba+a3ysZcC2luZWf9H5vBs3nLo0maaG4WoMJzOKhnJzJ36d5OMcIkJSpLjneuiuGvmC1toyqSB14JyY9olOYrs+xpmW58pTYhqVHtVnJ+/qrA/Dndqp11zos5W6pcouOblgYn4d0b0p+4lmgLiDb/cPAud6ojyC5cHYcc8A9XfsbuOBy6ZuTh0hcHW6uhTRx2SUgTm2ZzF/hZEkcvhyP4AA0ejg9XkU12Pg+8GydhAUgf2+Nal1609eEbL8+qVPlunmIO9iXGoxA5yTHtOuEovJQ2UmMTfBzVCjwEoRi6Fj5gUe2cEWRAeKr1A832GMu/rB6ILdZYPpIhZX1fYRYSumuFkCwO2xk1P1LYLppy4I9rPBtvSt703q/J3ga9TKA0paNnRnyfZjGxJXbas4y+mEan/bsvdKWDhRIzfG6lK28QtxGuwb/+xtltaI=
+  gem: travissquish
+  on:
+    tags: true
+    repo: nicklanng/travis-squish
