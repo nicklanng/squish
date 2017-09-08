@@ -9,4 +9,5 @@ Gem::Specification.new do |s|
 	s.files		= ['lib/travissquish.rb']
 	s.homepage	= 'http://rubygems.org/gems/travissquish'
 	s.license	= 'MIT'
+	s.executables	<< 'travissquish'
 end
