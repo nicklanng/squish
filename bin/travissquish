@@ -2,4 +2,4 @@
 
 require 'travissquish'
 
-puts TravisSquish.hi
+TravisSquish.changed_files
