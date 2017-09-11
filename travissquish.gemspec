@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name		= 'travissquish'
-	s.version 	= '0.0.0'
+	s.version 	= '0.1.1'
 	s.date		= '2017-09-08'
 	s.summary	= 'Travis Squish'
 	s.description	= 'Orchestrate mutliple projects in a single Travis CI enabled repository'
