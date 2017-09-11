@@ -5,4 +5,3 @@ watches:
   lib/:
     - echo "Lib file changed"
     - echo "Lib file still changed"
-    - exit 1
