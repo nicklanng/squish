@@ -8,18 +8,18 @@ class TravisSquish
     return changedFiles.split(/\n+/)
   end
 
- 	def self.run
-		begin
-	    @config = YAML.load_file(".squish.yml")
-	  rescue
-	    puts "Missing or malformed .squish.yml in repository root"
-			return
-		end
+  def self.run
+    begin
+      @config = YAML.load_file(".squish.yml")
+    rescue
+      puts "Missing or malformed .squish.yml in repository root"
+      return
+    end
 
     watches = @config["watches"]
     matches = Hash.new
 
-		changedFiles = get_changed_files()
+    changedFiles = get_changed_files()
     changedFiles.each do |file|
       path = Pathname.new(file)
 
@@ -44,5 +44,5 @@ class TravisSquish
       end
     end
     exit(1) if errored
-	end
+  end
 end
