@@ -1,5 +1,5 @@
-require 'yaml'
-require 'pathname'
+require "yaml"
+require "pathname"
 
 class TravisSquish
 
@@ -12,11 +12,11 @@ class TravisSquish
 		begin
 	    @config = YAML.load_file(".squish.yml")
 	  rescue
-	    puts 'Missing or malformed .squish.yml in repository root'
+	    puts "Missing or malformed .squish.yml in repository root"
 			return
 		end
 
-    watches = @config['watches']
+    watches = @config["watches"]
     matches = Hash.new
 
 		changedFiles = get_changed_files()
@@ -33,9 +33,9 @@ class TravisSquish
 
     errored = false
     matches.each do |key, value|
-      puts 'Changes seen in ' + key
+      puts "Changes seen in " + key
       value.each do |cmd|
-        puts cmd
+        puts "travissquish> $ " + cmd
         result = system cmd
         if result == false then
           errored = true
