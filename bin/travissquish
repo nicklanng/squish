@@ -2,4 +2,4 @@
 
 require 'travissquish'
 
-TravisSquish.changed_files
+TravisSquish.run
