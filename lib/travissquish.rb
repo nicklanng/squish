@@ -33,7 +33,9 @@ class TravisSquish
 
     errored = false
     matches.each do |key, value|
+      puts 'Changes seen in ' + key
       value.each do |cmd|
+        puts cmd
         result = system cmd
         if result == false then
           errored = true
