@@ -33,7 +33,7 @@ class TravisSquish
 
     errored = false
     matches.each do |key, value|
-      puts "Changes seen in " + key
+      puts "travissquish> Changes seen in " + key + ", running commands:"
       value.each do |cmd|
         puts "travissquish> $ " + cmd
         result = system cmd
